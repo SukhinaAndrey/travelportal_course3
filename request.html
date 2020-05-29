@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Відгуки</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d9154ad471.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="head">
+        <ul class="head-ul">
+            <a href="index.html">
+                <li class="head-li">Світові подорожі</li>
+            </a>
+            <a href="destenations.html">
+                <li class="head-li">Направлення</li>
+            </a>
+            <a href="events.html">
+                <li class="head-li">Події</li>
+            </a>
+            <a href="#">
+                <li class="head-li special">Відгуки</li>
+            </a>
+            <a href="contacts.html">
+                <li class="head-li">Контакти</li>
+            </a>
+        </ul>
+
+        <nav class="navigation">
+            <ol class="navigation_ol">
+                <i class="fa fa-window-close fa-2x  icon-close-aside" aria-hidden="true"></i>
+                <a href="index.html">
+                    <li class="menu_item">Світові подорожі</li>
+                </a>
+                <a href="destenations.html">
+                    <li class="menu_item">Направлення</li>
+                </a>
+                <a href="events.html">
+                    <li class="menu_item">Події</li>
+                </a>
+                <a href="#">
+                    <li class="menu_item special">Відгуки</li>
+                </a>
+                <a href="contacts.html">
+                    <li class="menu_item">Контакти</li>
+                </a>
+            </ol>
+            <hr class="strip">
+            <hr class="strip">
+            <hr class="strip">
+        </nav>
+    </header>
+
+    <main class="requestMain">
+        <section class="containerForm">
+            <form action="" method="POST" class="order-form" id="form" name="form">
+
+                <label><b>Ім'я*:</b></label>
+                <input type="text" name="user-name" id="name" class="form-input" placeholder="Андрій"
+                    required="required">
+    
+                <label><b>Місто*:</b></label>
+                <input type="text" name="user-city" id="city" class="form-input" placeholder="Київ" required="required">
+    
+                <textarea name="user-comment" id="comment" class="form-input request"
+                    placeholder="Залиште відгук чи побажання"></textarea>
+                <input type="button" value="Відправити" id="submit" onclick="sendBtnClicked()">
+                <button class="clean-order">Очистити</button>
+    
+            </form>
+        </section>
+        <section class="massageBox">
+            <p class="commentsTitle">Коментарі</p>
+            <hr class="commentTitleHr">
+        </section>
+    </main>
+    <footer class="foot-er">
+        <p class="mark">Sukhina Andrii &copy; 2020</p>
+    </footer>
+
+    <script src="global.js"></script>
+    <script src="reguest.js"></script>
+    <script src="https://use.fontawesome.com/b497e656ae.js"></script>
+
+    <script>
+        function sendBtnClicked() {
+            var sendForm = function(url, callback) {        
+                var xhr = new XMLHttpRequest();
+                var formData = new FormData(document.forms.form);
+                xhr.open('POST', url, true);
+                
+                xhr.onload = function() {
+                    var status = xhr.status;
+                    if (status == 200) {
+                        callback(null, xhr.response);
+                    } else {
+                        callback(status);
+                    }
+                };
+                xhr.send(formData);
+            };
+
+            sendForm('mail.php',  function(err, data) {
+                if (err != null) {
+                    console.error(err);
+                    alert("ERROR");
+                } else {
+                    alert("Дані успішно відправлено");
+                    document.getElementById("name").value = "";
+                    document.getElementById("city").value = "";
+                    document.getElementById("comment").value = "";
+                }
+            });
+        }
+    </script>
+
+    <script>
+        var massageBox = document.getElementsByClassName("massageBox")[0];
+        let coments = 0;
+
+        var sendForm = function(url, callback) {        
+            var xhr = new XMLHttpRequest();
+            let formData = new FormData();
+            formData.append("lIndex", coments);//створюєм новий обєкт і передаємо ключ значення
+            xhr.open('POST', url, true);
+            
+            xhr.onload = function() {
+                var status = xhr.status;
+                if (status == 200) {
+                    callback(null, xhr.response);
+                } else {
+                    callback(status);
+                }
+            };
+            xhr.send(formData);
+        };
+
+        displayAll();
+        let timerId = setInterval(() => 
+        displayAll()
+        , 10000);
+
+        function displayAll() {
+            sendForm('getAll.php',  function(err, data) {
+                if (err != null) {
+                    console.error(err);
+                    alert("ERROR");
+                } else {
+                    //alert("Дані успішно отримано");
+                    //console.log(data);
+                    if(data === "")
+                        return;
+                    let finalJSON = JSON.parse(data);
+                    coments = finalJSON[finalJSON.length - 1].id;
+
+                    finalJSON.forEach(element => {
+
+                        document.querySelector(".massageBox").innerHTML += `<div class='boxComment'>
+                    <div class='leftPartComment'>
+                        <i class="fas fa-user fa-3x"></i>
+                        <p class="NewnameUser">${element.name}</p>
+                        <p class="NewCityUser">${element.city}</p>
+                    </div>
+                    <div class="rightPartComment">
+                        <p class="userText">${element.message}</p>
+                    </div>
+                </div>`;
+                    });
+
+                }
+            });
+        }
+        
+    </script>
+
+</body>
+
+</html>

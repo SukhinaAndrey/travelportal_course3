@@ -1,0 +1,1653 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/RobotoMono-Regular.ttf');
+}
+
+/* html::-webkit-scrollbar { width: 0 !important } */
+
+body {
+    margin: 0;
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+
+a:focus,
+a:link,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: rgb(207, 202, 202);
+    cursor: default;
+    outline: none;
+}
+
+li {
+    list-style-type: none;
+    margin: auto 20px;
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    padding: 0;
+}
+
+path {
+    fill: lightgray;
+    stroke: white;
+}
+
+path:hover {
+    fill: rgb(241, 221, 36);
+    cursor: pointer;
+}
+
+#UA {
+    fill: rgb(46, 53, 155);
+}
+
+#BR,
+#IN,
+#ES{
+    fill: rgb(252, 141, 67);
+}
+
+#AR,
+#ID{
+    fill: rgb(211, 156, 4);
+}
+
+#AU,
+#CA,
+#ZA,
+#IT{
+    fill: rgb(13, 49, 10);
+}
+
+#GF,
+#FR{
+    fill: rgb(75, 22, 59);
+}
+
+#UA:hover,
+#AR:hover,
+#AU:hover,
+#GF:hover,
+#CA:hover,
+#FR:hover,
+#IN:hover,
+#ID:hover,
+#ZA:hover,
+#IT:hover,
+#ES:hover,
+#BR:hover {
+    fill: rgb(241, 221, 36);
+}
+
+.center {
+    text-align: center;
+}
+
+/* start of body 1366px*/
+
+
+.head {
+    width: 100%;
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    background: rgb(36, 129, 235);
+    z-index: 3;
+    box-sizing: border-box;
+}
+
+.head-li:hover {
+    transition: all 0.5s;
+    color: white;
+}
+
+.special {
+    color: white;
+}
+
+.navigation{
+    display: none;
+}
+
+.icon-close-aside{
+    float: right;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+
+.icon-close-aside:hover{
+    transform: scale(1.1);
+}
+
+/* Start of main */
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.popular-places-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(240, 237, 250, 1) 13%,
+            rgba(224, 218, 250, 1) 23%, rgba(210, 200, 250, 1) 38%, rgba(168, 176, 250, 1) 43%,
+            rgba(165, 150, 242, 1) 60%, rgba(177, 186, 245, 1) 74%, rgba(221, 215, 250, 1) 90%,
+            rgba(246, 245, 250, 1) 100%);
+}
+
+.p-popular-places {
+    font-size: 35px;
+    color: rgb(10, 99, 182);
+    font-weight: 600;
+}
+
+/* slider */
+
+:root {
+    --gutter: 40px;
+}
+
+.slider-box {
+    width: 90%;
+    overflow-y: hidden;
+    padding: 0 0 var(--gutter) 0;
+    display: grid;
+    grid-gap: var(--gutter) 0;
+    grid-template-columns: var(--gutter) 1fr var(--gutter);
+    align-content: start;
+    margin-bottom: 30px;
+}
+
+.slider-box::-webkit-scrollbar {
+    height: 9px;
+}
+
+.slider-box::-webkit-scrollbar-track {
+    background: #4b4c4d;
+    border: 4px solid transparent;
+    background-clip: content-box;
+}
+
+.slider-box::-webkit-scrollbar-thumb:horizontal {
+    background: #4b4c4d;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+.slider-box::-webkit-scrollbar-thumb:horizontal:hover {
+    background: rgb(37, 37, 37);
+}
+
+.slider-box>* {
+    grid-column: 2 / -2;
+}
+
+.slider-box>.full {
+    grid-column: 1 / -1;
+}
+
+.slider {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: grid;
+    grid-gap: calc(var(--gutter) / 2);
+    grid-template-columns: repeat(6, calc(42% - var(--gutter) * 2));
+    grid-template-rows: 40vh;
+    margin-left: -40px;
+}
+
+.slider>li,
+.item {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+.slider>li:hover,
+.item:hover {
+    transition: all 1s;
+    opacity: 0.8;
+}
+
+.pplace1{
+    background: url('photos/taj-mahal.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.pplace2{
+    background: url('photos/indonezia.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.pplace3{
+    background: url('photos/keiptown.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.pplace4{
+    background: url('photos/Kanada.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.pplace5{
+    background: url('photos/Australia.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.pplace6{
+    background: url('photos/CopacabanaBeach.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+.events-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background: rgb(36, 129, 235);
+}
+
+.main-events-of-year {
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+}
+
+.events-of-year-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 25% 35%;
+    grid-gap: 45px;
+    padding: 10px 5% 10px 5%;
+    box-sizing: border-box;
+}
+
+.events-of-year-box2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 35% 22%;
+    grid-gap: 60px;
+    padding: 10px 5% 10px 5%;
+    box-sizing: border-box;
+}
+
+.box-for-roztiagivalka {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.roztiagivalka {
+    margin-top: 100%;
+}
+
+.events-of-year {
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(253, 252, 252);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.eevents1{
+    background: url('photos/muzfest.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.eevents2{
+    background: url('photos/fireshow.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.eevents3{
+    background: url('photos/comfest.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.eevents4{
+    background: url('photos/cloun_fest.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.eevents5{
+    background: url('photos/vinefest.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.eevents6{
+    background: url('photos/tomato.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.events-of-year:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.data-of-events {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background: rgb(231, 56, 13);
+    border-radius: 50%;
+    width: 25%;
+    height: 25%;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.all-events{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    border: 1px solid rgb(180, 179, 179);
+    color: white;
+    cursor: pointer;
+    margin: 30px 0 30px 0;
+    padding: 15px;
+    font-size: 22px;
+    background: rgb(10, 99, 182);
+}
+
+.all-events:hover {
+    color: white;
+    border: 1px solid rgb(10, 99, 182);
+    color: rgb(10, 99, 182);
+    transition: all 1s;
+    background: rgb(255, 255, 255, 0.8);
+}
+
+.events-of-year-box3,
+.events-of-year-box4,
+.events-of-year-box5,
+.events-of-year-box6,
+.events-of-year-box7,
+.events-of-year-box8,
+.events-of-year-box9,
+.events-of-year-box10,
+.events-of-year-box11 {
+    display: none;
+}
+
+
+
+.choose-destenation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background: url('photos/destenation-wallpaper.jpg') no-repeat right top;
+    background-size: 100%;
+}
+
+.p-choose-destenation {
+    font-size: 35px;
+    color: rgb(10, 99, 182);
+    font-weight: 600;
+}
+
+.all-coutries-chooses1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-gap: 2%;
+    padding: 10px 5% 10px 5%;
+    box-sizing: border-box;
+}
+
+.all-coutries-chooses2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+    grid-gap: 2%;
+    padding: 10px 5% 10px 5%;
+    box-sizing: border-box;
+}
+
+.opacity-box1 {
+    background-size: cover;
+    background: url('photos/Barcelona-Spain.jpg') no-repeat center center;
+}
+
+.opacity-box2 {
+    background: url('photos/rio.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.opacity-box3 {
+    background: url('photos/buenos-aires.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.opacity-box4 {
+    background: url('photos/paris.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.opacity-box5 {
+    background: url('photos/Italy-Roma.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.opacity-box6{
+    background: url('photos/taj-mahal.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.opacity-box7{
+    background: url('photos/indonezia.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.opacity-box8{
+    background: url('photos/keiptown.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.opacity-box9{
+    background: url('photos/Kanada.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.opacity-box10{
+    background: url('photos/Australia.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+
+
+
+.places-of-rest-special {
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.places-of-rest {
+    height: 13vw;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(253, 253, 253);
+    cursor: pointer;
+}
+
+.opacity-box1:hover,
+.opacity-box2:hover,
+.opacity-box3:hover,
+.opacity-box4:hover,
+.opacity-box5:hover,
+.opacity-box6:hover,
+.opacity-box7:hover,
+.opacity-box8:hover,
+.opacity-box9:hover,
+.opacity-box10:hover {
+    transition: all 1s;
+    opacity: 0.8;
+}
+
+.all-destenations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    border: 1px solid rgb(10, 99, 182);
+    color: rgb(10, 99, 182);
+    cursor: pointer;
+    margin: 30px 0 30px 0;
+    padding: 15px;
+    font-size: 22px;
+    background: rgb(255, 255, 255, 0.8);
+}
+
+.all-destenations:hover {
+    background: rgb(10, 99, 182);
+    color: white;
+    transition: all 1s;
+    border: 1px solid rgb(180, 179, 179);
+}
+
+.usefull-links-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background: rgb(36, 129, 235);
+    color: white;
+    box-sizing: border-box;
+}
+
+.usefull-links {
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+}
+
+.box-links-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-gap: 2%;
+    padding: 10px 5% 10px 5%;
+    box-sizing: border-box;
+
+}
+
+.links-box {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.usefull-li {
+    cursor: pointer;
+    margin-bottom: 5px;
+    color: rgb(207, 202, 202);
+}
+
+.usefull-li:hover {
+    transition: all 0.5s;
+    color: white;
+}
+
+/* footer */
+
+.foot-er {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(31, 31, 31, 1) 0%, rgba(31, 31, 31, 1) 3%,
+            rgba(77, 74, 77, 1) 12%, rgba(15, 15, 15, 1) 17%, rgba(66, 65, 66, 1) 25%, rgba(71, 71, 71, 1) 39%,
+            rgba(31, 31, 31, 1) 51%, rgba(44, 44, 44, 1) 53%, rgba(17, 17, 17, 1) 60%, rgba(56, 55, 56, 1) 76%,
+            rgba(28, 28, 28, 1) 91%, rgba(19, 19, 19, 1) 100%);
+    color: white;
+}
+
+.mark{
+    font-size: 16px;
+}
+
+/* Destenations.html */
+
+.presentation-photo,
+.presentation-photo2,
+.presentation-photo3,
+.presentation-photo4,
+.presentation-photo5,
+.presentation-photo6,
+.presentation-photo7,
+.presentation-photo8,
+.presentation-photo9,
+.presentation-photo10,
+.presentation-photo11{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 30%;
+}
+
+.presentation-photo{
+    background: url("photos/nature.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.presentation-photo2{
+    background: url("photos/cape-town-big-screen.webp") no-repeat center center;
+    background-size: cover;
+}
+
+.presentation-photo3{
+    background: url("photos/kanada-presentation.jpg") no-repeat center center;
+    background-size: cover;
+}
+.presentation-photo4{
+    background: url("photos/faq-australia.png") no-repeat center center;
+    background-size: cover;
+}
+.presentation-photo5{
+    background: url("photos/brazil-rio.jpg") no-repeat center center;
+    background-size: cover;
+}
+.presentation-photo6{
+    background: url("photos/indonezia-presentation.jpg") no-repeat center center;
+    background-size: cover;
+}
+.presentation-photo7{
+    background: url("photos/inida.jpg") no-repeat center center;
+    background-size: cover;
+}
+.presentation-photo8{
+    background: url("photos/Iguazu-waterfall-Argentina.jpg") no-repeat center center;
+    background-size: cover;
+}
+.presentation-photo9{
+    background: url("photos/france-desten.jpg") no-repeat center center;
+    background-size: cover;
+}
+.presentation-photo10{
+    background: url("photos/Italy-florencia.jpg") no-repeat center center;
+    background-size: cover;
+}
+.presentation-photo11{
+    background: url("photos/spain-desten.jpg") no-repeat center center;
+    background-size: cover;
+}
+.openWorld{
+    font-size: 40px;
+    color: white;
+}
+
+.boxFordestenations{
+    width: 100%;
+    background: url('photos/destenation-wallpaper.jpg') repeat right top;
+    background-size: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    box-sizing: border-box;
+    padding: 20px 7% 30px 7%;
+    grid-column-gap: 10px;
+}
+
+.boxFordestenations a{
+    margin-top: 10px;
+}
+
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    padding: 10vw 0;
+}
+
+.forDescription{
+    width: 100%;
+    padding: 20px 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title-of-tourist-place{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.group-desc{
+    width: 100%;
+}
+
+.desten-photo{
+    width: 60vw;
+    height: 70vh;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+/* events.html */
+
+.events-main{
+    background: rgb(243, 242, 242);
+}
+
+.sort-button-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 21.25% 21.25% 21.25% 21.25%;
+    grid-gap: 5%;
+    padding: 30px 10%;
+    box-sizing: border-box;
+}
+
+.sort-button{
+    padding: 5%;
+    background: rgb(201, 208, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sort-button:hover{
+    transition: all 0.5s;
+    background: rgb(119, 116, 116);
+    color: white;
+}
+
+.container-for-list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% 37%;
+    grid-gap: 3%;
+    padding: 30px 5%;
+    box-sizing: border-box;
+}
+
+#events-list{
+    /* width: 60%; */
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-column-gap: 4%;
+    align-self: flex-start;
+}
+
+.bar-menu{
+    position: sticky;
+    height: 40vh;
+    top: 30%;
+}
+
+.general-cotainer-events-box{
+    display: flex;
+    flex-direction: column;
+    background: rgb(224, 224, 224);
+    color: black;
+    margin-bottom: 10px;
+}
+
+.general-cotainer-events-box:hover{
+    transition: background 1s;
+    transition: transform 0.3s;
+    background: white;
+    transform: scale(1.02);
+}
+
+.events-child-box1,
+.events-child-box2,
+.events-child-box3,
+.events-child-box4,
+.events-child-box5,
+.events-child-box6,
+.events-child-box7,
+.events-child-box8,
+.events-child-box9,
+.events-child-box10,
+.events-child-box11,
+.events-child-box12,
+.events-child-box13,
+.events-child-box14,
+.events-child-box15,
+.events-child-box16,
+.events-child-box17,
+.events-child-box18,
+.events-child-box19,
+.events-child-box20,
+.events-child-box21,
+.events-child-box22,
+.events-child-box23,
+.events-child-box24,
+.events-child-box25,
+.events-child-box26,
+.events-child-box27,
+.events-child-box28,
+.events-child-box29,
+.events-child-box30,
+.events-child-box31,
+.events-child-box32{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.events-child-box1{
+    background: url("photos/Carnaval-Argentina.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box2{
+    background: url("photos/ven-fest.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box3{
+    background: url("photos/tamborada.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box4{
+    background: url("photos/thailand-flowers.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box5{
+    background: url("photos/ven-fest.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box6{
+    background: url("photos/oskar.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box7{
+    background: url("photos/max-carn.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box8{
+    background: url("photos/rio-carn.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box9{
+    background: url("photos/falias.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box10{
+    background: url("photos/tulpan.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box11{
+    background: url("photos/Colosseum-taly-Rome.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box12{
+    background: url("photos/Den-cheloveka-morya.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box13{
+    background: url("photos/day-bicycle.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box14{
+    background: url("photos/chese.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box15{
+    background: url("photos/strawberry.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box16{
+    background: url("photos/muzfest.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box17{
+    background: url("photos/bach-festival1.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box18{
+    background: url("photos/cannes-lion.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box19{
+    background: url("photos/fireshow.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box20{
+    background: url("photos/slavic-bazzar.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box21{
+    background: url("photos/comfest.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box22{
+    background: url("photos/cloun_fest.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box23{
+    background: url("photos/vinefest.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box24{
+    background: url("photos/palio.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box25{
+    background: url("photos/tomato.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box26{
+    background: url("photos/ven-film-fest.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box27{
+    background: url("photos/dens-fest.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box28{
+    background: url("photos/octoberfest.webp") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box29{
+    background: url("photos/lumier.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box30{
+    background: url("photos/choco.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box31{
+    background: url("photos/kirmes.jpg") no-repeat center center;
+    background-size: cover;
+}
+.events-child-box32{
+    background: url("photos/day-dai.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.type-of-event{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    background: rgb(255, 69, 0);
+    font-size: 16px;
+    padding: 5px 20px;
+}
+
+.data-of-event{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(53, 4, 143, 0.5);
+    font-size: 16px;
+    padding: 5px 20px;
+    margin-top: 40%;
+}
+
+.title-of-event{
+    font-weight: 600;
+    margin: 10px 0 0 10px;
+}
+
+.coutry-title{
+    font-size: 15px;
+    margin: 0 0 10px 10px;
+}
+
+/* Відгуки */
+
+.requestMain{
+    background: rgb(221, 220, 220);
+}
+
+.containerForm{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.order-form{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 30px 0;
+}
+
+.form-input {
+    box-sizing: border-box;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.form-input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+.form-input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+.form-input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+.form-input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+.form-input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.form-input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+.form-input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+textarea {
+    resize: none;
+    outline: 0;
+}
+
+input{
+    outline: none;
+}
+
+input:valid{
+    background: white;
+}
+
+.request{
+    height: 70px;
+}
+
+#submit,
+.clean-order {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #f4f4f4;
+}
+
+.clean-order{
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.clean-order:hover{
+    transition: .4s ease all;
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+#submit:hover {
+    transition: .4s ease all;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.massageBox{
+    width: 60%;
+    margin-bottom: 30px;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background: white;
+    box-shadow:
+   0 1px 4px rgba(0, 0, 0, .3),
+   -23px 0 20px -23px rgba(0, 0, 0, .8),
+   23px 0 20px -23px rgba(0, 0, 0, .8),
+   0 0 40px rgba(0, 0, 0, .1) inset;
+}
+
+.commentsTitle{
+    align-self: flex-start;
+    font-size: 1.5rem;
+    color: rgb(46, 53, 155);
+    margin-bottom: 0;
+}
+
+.commentTitleHr{
+    width: 85%;
+    height: 2px;
+    background: rgb(46, 53, 155);
+    margin-right: 15%;
+    border: 0;
+}
+
+.boxComment{
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+}
+
+.leftPartComment{
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rightPartComment{
+    display: flex;
+    width: 75%;
+    background: rgb(221, 220, 220);
+    border: 1px solid grey;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.NewnameUser{
+    color: rgb(3, 3, 80);
+    margin-bottom: 0;
+}
+
+.NewCityUser{
+    margin: 0;
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.userText{
+    margin: 0;
+    color: rgb(3, 3, 80);
+}
+
+/* contacts */
+
+.contactsMain{
+    width: 100%;
+    height: 85vh;
+    background: url("./photos/more_palmy.jpg") no-repeat center center;
+    background-size: cover; 
+}
+
+.conInfoBox{
+    width: 50%;
+    height: 100%;
+    /* display: flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-columns: auto auto;
+    color: white;
+    align-self: flex-end;
+    align-items: center;
+}
+
+.social-icon {
+    border-radius: 5px;
+    margin: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-sign{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+@keyframes move {
+    50% {
+        transform: translateX(60%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes move_nav {
+    30% {
+        transform: translateX(7vw);
+    }
+
+    100% {
+        transform: translateX(20vw);
+    }
+}
+
+
+
+
+
+
+
+@media(max-width:1200px) {
+    .events-of-year {
+        font-size: 22px;
+    }
+
+    .data-of-events {
+        font-size: 18px;
+    }
+}
+
+@media(max-width:980px) {
+    body {
+        font-size: 18px;
+    }
+
+    .presentation-photo{
+        padding: 0 15%;
+    }
+
+    .p-popular-places,
+    .main-events-of-year,
+    .p-choose-destenation,
+    .usefull-links,
+    .openWorld {
+        font-size: 30px;
+    }
+
+    .slider {
+        grid-template-columns: repeat(6, calc(80% - var(--gutter) * 2));
+        grid-template-rows: 33vw;
+    }
+
+    .events-of-year-box,
+    .events-of-year-box2 {
+        display: none;
+    }
+
+    .events-of-year-box3,
+    .events-of-year-box4,
+    .events-of-year-box5 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 45% 30%;
+        justify-content: space-between;
+        padding: 10px 5%;
+        box-sizing: border-box;
+    }
+
+    .events-of-year-box3 {
+        grid-template-columns: 55% 40%;
+    }
+
+    .events-of-year-box4 {
+        grid-template-columns: 40% 58%;
+    }
+
+    .events-of-year-box5 {
+        grid-template-columns: 55% 40%;
+    }
+
+    #world-svg-map {
+        display: none;
+    }
+
+    .all-coutries-chooses1,
+    .all-coutries-chooses2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10%;
+        box-sizing: border-box;
+    }
+
+    .all-coutries-chooses1 div,
+    .all-coutries-chooses2 div{
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .places-of-rest-special,
+    .places-of-rest {
+        width: 100%;
+        height: 40vw;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: pointer;
+    }
+
+    .choose-destenation {
+        background: url('photos/destenation-wallpaper.jpg') repeat right top;
+        background-size: 100%;
+    }
+
+    .all-destenations,
+    .all-events {
+        width: 250px;
+        padding: 12px;
+        font-size: 20px;
+    }
+
+    .container-for-list{
+        display: flex;
+        padding: 30px 5%;
+    }
+    
+    #events-list{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 48% 48%;
+        grid-column-gap: 4%;
+        align-self: flex-start;
+    }
+    
+    .bar-menu{
+        display: none;
+    }
+}
+
+@media(max-width:780px){
+
+    .head-ul{
+        display: none;
+    }
+
+    .head {
+        justify-content: flex-start;
+        padding: 20px;
+    }
+
+    .strip {
+        height: 4px;
+        width: 50px;
+        background: rgb(77, 76, 73);
+        border: none;
+        margin: 5px;
+        padding: 0;
+    }
+    
+    .navigation:hover .strip {
+        animation: move 0.3s linear;
+    }
+    
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .navigation_ol {
+        position: absolute;
+        z-index: 3;
+        top: -25px;
+        left: -25vw;
+        width: 40vw;
+        height: 103vh;
+        display: none;
+        background: rgb(51, 45, 45);
+        margin: 0;
+        padding: 0;    
+    }
+    
+    .menu_item {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        color: rgb(206, 205, 209);
+        font-weight: 500;
+        transition: 0.5s ease-in all;
+    }
+    
+    .menu_item:hover {
+        background: rgb(66, 65, 66);
+        color: orangered;
+    }
+
+    .opacity-box1 {
+        background: url('photos/spain-small-screen.jpg') no-repeat center center;
+        background-size: cover;
+    }
+
+    .mark{
+        font-size: 15px;
+    }
+
+    .desten-photo{
+        width: 100%;
+        height: 50vh;
+    }
+
+    .order-form{
+        width: 30%;
+    }
+    
+    .form-input {
+        padding-left: 7px;
+        height: 30px;
+    }
+    
+    .request{
+        height: 60px;
+    }
+    
+    #submit,
+    .clean-order {
+        height: 35px;
+    }
+
+    .massageBox{
+        width: 95%;
+        margin-right: 0;
+    }
+
+    .conInfoBox{
+        grid-template-columns: auto;
+    }
+}
+
+@media(max-width:780px){
+
+    .boxFordestenations{
+        grid-template-columns: auto;
+        padding: 20px 12% 30px 12%;
+    }
+
+    .flexCenter{
+        font-size: 25px;
+        padding: 20vw 0;
+    }
+
+    .events-of-year {
+        font-size: 20px;
+    }
+
+    .data-of-events {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    .p-popular-places,
+    .main-events-of-year,
+    .p-choose-destenation,
+    .usefull-links {
+        font-size: 25px;
+    }
+
+    .places-of-rest-special,
+    .places-of-rest {
+        font-size: 22px;
+    }
+
+    .all-destenations,
+    .all-events {
+        width: 200px;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .sort-button-grid{
+        grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
+        grid-gap: 2%;
+        padding: 30px 5%;
+    }
+}
+
+@media(max-width:500px){
+    .navigation_ol {
+        width: 50vw;  
+        top: -20px;
+        left: -27vw; 
+    }
+
+    .strip {
+        height: 3px;
+        width: 40px;
+        margin: 4px;
+    }
+
+    .mark{
+        font-size: 14px;
+    }
+
+    .presentation-photo{
+        padding: 0 10%;
+    }
+
+    .openWorld{
+        font-size: 25px;
+    }
+
+    .all-destenations,
+    .all-events {
+        width: 180px;
+        padding: 7px;
+    }
+
+    .slider {
+        grid-template-columns: repeat(6, calc(140% - var(--gutter) * 2));
+        grid-template-rows: 120vw;
+    }
+
+    .events-of-year-box3,
+    .events-of-year-box4,
+    .events-of-year-box5{
+        display: none;
+    }
+
+    .events-of-year-box6,
+    .events-of-year-box7,
+    .events-of-year-box8,
+    .events-of-year-box9,
+    .events-of-year-box10,
+    .events-of-year-box11 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+
+    .events-of-year-box6{
+        align-items: flex-start;
+    }
+    .events-of-year-box7{
+        align-items: flex-end;
+    }
+    .events-of-year-box8{
+        align-items: center;
+    }
+    .events-of-year-box9{
+        align-items: center;
+    }
+    .events-of-year-box10{
+        align-items: flex-start;
+    }
+    .events-of-year-box11{
+        align-items: flex-end;
+    }
+
+    .size-of-events-circle1{
+        width: 80%;
+        margin-left: 10px;
+    }
+    .size-of-events-circle2{
+        width: 50%;
+        margin-right: 10px;
+    }
+    .size-of-events-circle3{
+        width: 90%;
+    }
+    .size-of-events-circle4{
+        width: 80%;
+    }
+    .size-of-events-circle5{
+        width: 60%;
+        margin-left: 10px;
+    }
+    .size-of-events-circle6{
+        width: 80%;
+        margin-right: 10px;
+    }
+
+    .desten-photo{
+        width: 100%;
+        height: 40vh;
+    }
+
+    #events-list{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .order-form{
+        width: 60%;
+    }
+}
+
+@media(max-height:450px){
+    .menu_item{
+        height: 15%;
+    }
+
+    .desten-photo{
+        width: 100%;
+        height: 80vh;
+    }
+
+    .conInfoBox{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        align-items: center;
+        justify-content: center;
+    }
+}
